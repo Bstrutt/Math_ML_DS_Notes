@@ -49,9 +49,7 @@ to the Quaternions formula where q = (v,w) = (sin(theta)/2 * n, cos(theta)/2) us
 
 #### 3D to 2D projections
 
-* Simplest if you use orthography which just removes your depth coordinate from the homogeneous coordinate. This doesn't really give a good 3d "feel" more akin to TMNT games from back in the day. 
-
-* Using Projection will keep that 3d "feel."
+* Simplest if you use orthography which just removes your depth coordinate from the homogeneous coordinate. This doesn't really give a good 3d "feel" more akin to TMNT games from back in the day. Using Projection will keep that 3d "feel."
 
 
 
