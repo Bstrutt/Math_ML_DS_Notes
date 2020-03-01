@@ -77,3 +77,10 @@ linear algebra books.
   any of the other vectors.
   * This has always made sense to me but when it comes to the implications of a linearly independent space or a linearly independent vector I am a bit confused and unsure.
   * A set of linearly indepenedent vectors consists of vectors with no redundancy. If we remove any of them we lose some information. 
+* Results of Linear Independence
+  * Vectors are either linearly independent or linearly dependent
+  * If a vector in a set is 0 then the vectors in the set are linearly dependent
+  * The above holds if two or more vectors are identical
+  Vectors are linearly dependent if at least one is a linear combination of the others
+  * Gaussian elimination can be used to determine linear independence. Write all vectors as columns of a matrix. Get to reduced row echelon form. The pivot columns are independent. Non-pivot coloumns are linear combinations of the pivot columns to their left.
+  * 
