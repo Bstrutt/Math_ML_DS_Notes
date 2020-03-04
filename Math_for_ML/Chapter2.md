@@ -83,4 +83,49 @@ linear algebra books.
   * The above holds if two or more vectors are identical
   Vectors are linearly dependent if at least one is a linear combination of the others
   * Gaussian elimination can be used to determine linear independence. Write all vectors as columns of a matrix. Get to reduced row echelon form. The pivot columns are independent. Non-pivot coloumns are linear combinations of the pivot columns to their left.
-  * 
+### Basis and Rank 
+* A subset of a vector space which can create the vector space through linear combinations is called a "generating set"
+* Sets are said to "span" vector spaces if they can represent the space through linear combination.
+* A basis is a minimal subset that spans a vector space.
+  * Basis implies that the set is maximal linearly independent so if anything is added it will become dependent.
+  * Bases are not necessarily unique.
+  * Bases do have the same number of elements.
+* Dimension is defined as the number of basis vectors of a vector space, NOT the number of elements in the vector.
+  * The dimension can be thought of as the number of independent directions in the vector space.
+* To find a basis, write the spanning vectors as columns, get the matrix to Row Echelon, pivot columns are your basis vectors.
+* Rank is defined as the number of linearly independent rows/columns
+  * rank(A) = rank(A<sup>T</sup>)
+  * Columns of A<sup>m*n</sup> span a subspace U<sup>m</sup> with dim(U)=rank(A)
+  * Rows of A<sup>m*n</sup> span a subspace W<sup>n</sup> with dim(W)=rank(A)
+  * For A<sup>n*n</sup> A is invertible iff rank(A)=n
+  * Full rank is defined as the largest possible rank for a matrix of a certain dimension. rank(A) = min(m,n) for a matrix A<sup>m*n</sup>
+ 
+### Linear Mapping
+* Linear mapping is defined in a nice one-liner on page 48 of this text.
+  * a mapping Q, vector space V and W, vectors x and y, scalars i and j.
+  * Q(ix+jy) = iQx + jQy
+  * This linear mapping is said to preserve the structure of the vector space. 
+  * Also called a vector space homomorphism, or a linear transformation
+  * Linear mappings can be represented by matrices
+* A mapping Q: V->W
+  * Injective(one-to-one)- Q(x) = Q(y) implies x = y
+    * Each input has a unique output. Different inputs will never get the same output
+  * Surjective- Q(V)=W
+    * Each element in W can be reached from V using the mapping
+  * Bijective- Both injective and surjective
+    * Can be reversed using a mapping inverse of Q
+  * Isomorphic- V-> W Linear and Bijective
+  * Endomorphic- V->V Linear
+  * Automorphic- V->V Linear and Bijective
+* Finite-dimensional vector spaces are isomorphic iff dim(V) = dim(W).
+* We can organize an ordered basis to be multiplied by columnn vectors to represent individual vectors of the span of the basis.
+* We do basis changes with linear mappings. We can change bases then map to other vector spaces and map onto other bases. It's all matrix multiplication.
+### Kernel and Image
+* Kernel is the set of vectors in input that map to the 0 element of output
+* The image is the set of vectors in output that can be reached by input
+* Nice diagram on page 59 of kernel and image relations
+* Very important theorem
+  * dim(ker(Q)) + dim(Im(Q)) = dim(V) for vector spaces V,W and mapping Q
+
+### Affine Spaces
+* 
