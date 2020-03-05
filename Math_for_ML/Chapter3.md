@@ -11,3 +11,8 @@ Inner products, norms, and metrics are used to develop support vector machines l
   * Triangle Inequality: ||x+y|| <= ||x||+||Y||
   * Positive Definite: ||x|| >= 0 and ||x|| = 0 <=> x = 0
 ### Inner Products
+Allows for intuitive geomtrical concepts.
+* Dot Product
+  * The sum total of each corresponding element in 2 vectors being multiplied. x<sup>T</sup>
+* General inner products
+  
