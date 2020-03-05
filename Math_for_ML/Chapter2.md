@@ -83,6 +83,7 @@ linear algebra books.
   * The above holds if two or more vectors are identical
   Vectors are linearly dependent if at least one is a linear combination of the others
   * Gaussian elimination can be used to determine linear independence. Write all vectors as columns of a matrix. Get to reduced row echelon form. The pivot columns are independent. Non-pivot coloumns are linear combinations of the pivot columns to their left.
+  
 ### Basis and Rank 
 * A subset of a vector space which can create the vector space through linear combinations is called a "generating set"
 * Sets are said to "span" vector spaces if they can represent the space through linear combination.
@@ -120,6 +121,7 @@ linear algebra books.
 * Finite-dimensional vector spaces are isomorphic iff dim(V) = dim(W).
 * We can organize an ordered basis to be multiplied by columnn vectors to represent individual vectors of the span of the basis.
 * We do basis changes with linear mappings. We can change bases then map to other vector spaces and map onto other bases. It's all matrix multiplication.
+
 ### Kernel and Image
 * Kernel is the set of vectors in input that map to the 0 element of output
 * The image is the set of vectors in output that can be reached by input
@@ -128,4 +130,11 @@ linear algebra books.
   * dim(ker(Q)) + dim(Im(Q)) = dim(V) for vector spaces V,W and mapping Q
 
 ### Affine Spaces
+* A subspace which has been divorced from the point of origin. We can map to an affine subspace from our original vector space with something called a displacement vector or translations. To contrast, linear subspaces always contain the origin of the vector space.
+* Affine mapping is a mapping between two affine spaces. Defined as follows. For vector spaces V, W, a linear mapping Q:V->W and a/in/W
+
+q:V->W
+
+x->a+Q(x)
+* The vector represented as a in the previous equation is called the translation vector
 * 
