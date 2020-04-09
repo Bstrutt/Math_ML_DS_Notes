@@ -25,4 +25,11 @@ Allows for intuitive geomtrical concepts.
     * For all n nonzero arguments, the result is positive. The inner product is a good example
   * Inner Product (General)
     * a positive definite, symmetric, bilinear mapping Q: VxV -> Real Numbers
-  * 
+Inner products and norms are closely related in that inner products produce norms and can be useful for calculating the length of vectors. The Manhattan norm is a good example of a norm without an inner product.
+
+Depending on which inner product you choose the resulting norm and length can be different because math is all made up to confuse normies
+
+* Distance
+  * Defined as d(x,y) := ||x-y|| = root(<x-y,x-y>)
+
+If we use the dot product as our inner product the norm we get is the Euclidean distance.
