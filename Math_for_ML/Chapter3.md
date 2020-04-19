@@ -103,5 +103,36 @@ Projections are important. We often have high dimensional data but this data is 
 Some important things that do this. Principal component analysis Pearson(1901) Hotelling (1933) and Deep neural nets (Deng 2010).
 
 * Projection
-  * 
+  * A linear mapping where vectors from space V are mapped onto a subspace U and the mapping is the same regardless of the number of times you map.
+  * This can be applied to special transformation matrices and are called projection matrices.
+
+There is a take on projections here that I've never heard and makes more sense than anything I've seen before. 
+When we project x onto a one dimensional subspace (U) we are seeking the vector in U which is closest to x. There are some excellent examples and walkthroughs of projections in the book on page 83. It's a lot of theory that I'm gonna skip over for the time being.
+
+The book skips a little over displacement vectors but they're simply the vector connecting the original vector to the subspace you're mapping to. This vector is orthogonal to the subspace.
+
+Examples 3.10 and 3.11 are pivotal to my understanding of projections.
+
+Projection error is the norm of the difference vector between the original vector and its projection onto its vector subspace.
+
+Simplified process for projection onto 2d subspace
+
+1. Write basis vectors of U into matrix B
+
+2. Compute B<sup>T</sup>B and the vector B<sup>T</sup>x 
+
+3. Solve the equation B<sup>T</sup>B(theta) = B<sup>T</sup>x 
+This will give us theta 
+
+4. We can compute the projection by B(theta)
+
+5. The projection matrix is given by B(B<sup>T</sup>B)<sup>-1</sup>B<sup>T</sup>
+
+To verify results we can check if the displacement vector is orthogonal to all basis vectors of U
+
+Projections are good for linear systems without solutions where we can get approximate solutions. The point is to get as close to the correct solution that we can. We do this by least squares.
+
+There's a small section on rotations here.
+Rotations preserve distances and angles. Order is important when rotating spaces of over 3 dimensions. I read this in that little Russian math book on group theory.
+
 
