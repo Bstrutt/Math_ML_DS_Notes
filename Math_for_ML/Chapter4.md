@@ -45,7 +45,23 @@ The trace of a square matrix is the sum of its diagonal elements and has the fol
 
 This is going to be a little free-form on Eigen values while I read through them more. I may come back to clarify or pretty things up.
 
-Eigen values and their matrices are characteristic values for matrices. An eigen value is one of possibly many values that can be multiplied by a vector to produce the same result as multiplying the same vector by our original matrix. The values that accomplish this are known as our Original Matrix's eigenvalues. Eigen values are always one of the roots of the characteristic polynomial of the original matrix. That is why to find eigen values in class we found the characteristic polynomial and then its roots. 
+Eigen values and their matrices are characteristic values for matrices. An eigen value is one of possibly many eigen-values that can be multiplied by a certain vector to produce the same result as multiplying the same vector by our original matrix. The values that accomplish this are known as our Original Matrix's eigenvalues. Eigen values are always one of the roots of the characteristic polynomial of the original matrix. That is why to find eigen values in class we found the characteristic polynomial and then its roots. 
 
 The set of all eigenvectors of an original matrix which are associated with an eigenvalue spans of subspace called an eigenspace of the original matrix with respect to that eigenvalue. The set of all eigenVALUES is called the eigenspectrum. Matrices and their transpose have the same eigenvalues but not the same eigenvectors. Eigenvalues, determinants, and trace are all invariant under basis change. 
+
+The eigenvalues of an n by n matrix with n distinct eigenvalues are linearly independent which means that they form a basis of the real numbers. We get to be really mean to matrices here and call them defective if they have fewer than n linearly independent eigenvectors.
+
+A neat little thing we can do to always get a symmetric positive SEMI-definite matrix is by A<sup>T</sup>A. ADDITIONALLY, if the rank of A, that is the max number of linearly independent rows/cols, is n then our resulting matrix is symmetric positive DEFINITE.
+
+The determinant of the matrix is the product of its eigenvalues and the trace is the sum of its eigenvalues. This is a tight little sum-up of eigenvalues. I like that it all sort of comes together into one.
+
+### Cholesky Decomposition
+
+A square root equivalent operation on symmetric positive definite matrices. Useful in machine learning. In learning about LU decomposition I have come across something similar to this. (As an aside transpose is mirroring along the diagonal, I just thought of the word mirroring and didn't want to not write this down though it doesn't fit here)
+
+A = LL<sup>T</sup>
+
+Where L is a lower triangular matrix with positive diagonals. L is unique. L is called the Cholesky factor of A. Since L is a triangular matrix the determinant is the product of its diagonal entries.
+
+### Eigendecomposition and Diagonalization
 
