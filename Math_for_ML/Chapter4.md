@@ -43,6 +43,8 @@ The trace of a square matrix is the sum of its diagonal elements and has the fol
 * Characteristic Polynomial
   * Subtract a scaled identity matrix, I, from the original matrix A. Take the determinant of the result. The coefficients of the equation found after taking the determinant make up your characteristic polynomial.
 
+### EigenValues and EigenVectors
+
 This is going to be a little free-form on Eigen values while I read through them more. I may come back to clarify or pretty things up.
 
 Eigen values and their matrices are characteristic values for matrices. An eigen value is one of possibly many eigen-values that can be multiplied by a certain vector to produce the same result as multiplying the same vector by our original matrix. The values that accomplish this are known as our Original Matrix's eigenvalues. Eigen values are always one of the roots of the characteristic polynomial of the original matrix. That is why to find eigen values in class we found the characteristic polynomial and then its roots. 
@@ -65,3 +67,6 @@ Where L is a lower triangular matrix with positive diagonals. L is unique. L is 
 
 ### Eigendecomposition and Diagonalization
 
+A matrix is diagonalizable if it is similar to a diagonal matrix. D =P<sup>-1</sup>AP. where A is our original and D is a diagonal matrix. Diagonalizing a matrix allows us to express the same linear mapping but in another basis which consists of eigenvectors of A. 
+
+Eigendecomposition has a lot of caveats. D is a diagonal matrix whose entries are eigenvalues of A. This can only happen if the eigenvectors form a basis for the set of all real numbers.
