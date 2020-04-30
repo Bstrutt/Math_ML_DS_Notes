@@ -70,3 +70,32 @@ Where L is a lower triangular matrix with positive diagonals. L is unique. L is 
 A matrix is diagonalizable if it is similar to a diagonal matrix. D =P<sup>-1</sup>AP. where A is our original and D is a diagonal matrix. Diagonalizing a matrix allows us to express the same linear mapping but in another basis which consists of eigenvectors of A. 
 
 Eigendecomposition has a lot of caveats. D is a diagonal matrix whose entries are eigenvalues of A. This can only happen if the eigenvectors form a basis for the set of all real numbers.
+
+Any symmetric matrix can always be diagonalized.
+
+The motivation for finding diagonal matrices is that they can be raised to powers and have their determinants computed more efficiently than their original counter-parts (in most cases)
+
+### Singular Value Decomposition
+
+This is an important one so pay attention. The singular value decomp (SVD) is sometimes referred to as the fundamental theorem of linear algebra. It can be applied to all matrices and always exists. There's a nice paper by Kalman that goes over the details of the SVD. I think I'll read it.
+
+A = U (sigma) V<sup>T</sup>
+
+A is our rectangular matrix m by n, U is an orthogonal matrix m by m with columns 1-m, V is an orthogonal matrix n by n with column vectors 1-n, finally, Sigma is a unique m by n matrix with greater than 0 value for each diagonal entry and zero for each other entry. The diagonals of Sigma are called singular values and are ordered from largest at position (1,1) and proceeding smaller. U entries are the left-singular vectors, v entries are right singular vectors.
+
+A superficial explanation is that our original matrix gets a basis change via V<sup>T</sup>, then a scaling and reduction in dimensionality via Sigma, finally another basis change via U.
+
+I'm gonna walk slowly through the explanation of the SVD because I want to understand it very well.
+
+We have a transformation matrix L of a linear mapping from Real<sup>n</sup> to Real<sup>M</sup> with respect to the standard bases B of Real<sup>n</sup> and C of Real<sup>m</sup>. We also assume alternative bases B* and C* of Real<sup>n</sup> and Real<sup>m</sup> respectively.
+
+The process begins here
+
+1. Our matrix V performs a basis change from B* to B so we use V<sup>T</sup> to change from B to B*. 
+
+2. After the basis change we use Sigma to scale the new values. This operation also adds or deletes dimensions. Sigma is the transformation matrix with respect to B* and C* 
+
+3. U does the basis change from C* back to C.
+
+Computing the SVD  of a matrix m by n is equivalent to computing the orthonormal bases of the respective codomains. From these bases we make our atrices U and V.
+
