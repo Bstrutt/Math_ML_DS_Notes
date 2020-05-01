@@ -45,3 +45,22 @@ To end this section Kalman mentions a bunch of different ways that SVD can be re
 
 ### Applications
 
+SVD finds use in large or high dimensional matrices and a bunch of other places. Here's a short list of some places.
+
+* Computing the EVD of A<sup>T</sup>A for principal component analysis and covariance matrices.
+  * The A<sup>T</sup>A computation will lead to significant decrease in accuracy of results.
+  * The SVD computaiton operates directly on A getting the eigenvectors and eigenvalues without having to compute A<sup>T</sup>.
+* Numericallys reliable estimate of the effective rank of a matrix
+  * In other words, we can tell which columns are linearly dependant despite measurement error.
+* The generalized inverse of a matrix. Closely related to linear least squares.
+
+A deeper dive on linear least squares. Kalman puts a whole section aside for this and I want to pay extra attention because linear least squares is pretty interesting.
+
+### Linear Least Squares
+
+
+
+
+
+
+
