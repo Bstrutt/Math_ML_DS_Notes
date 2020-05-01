@@ -25,7 +25,7 @@ The next thing Kalman talks about is the fact that we can think about matrices a
 
 Now we look at the SVD. Here we are transforming from real numbers in n dimensions to real numbers in m dimensions. Finding a natural basis for each of these is what we are doing when we get U and V. They are used to represent vectors in the n and m dimensions. Kalman says that from this perspective the SVD helps us to choose orthonormal bases so that the transformation is represented by a diagonal matrix.
 
-But! How do we choose the bases V and U? By Av<sub>i</sub>=sigma<sub>i<sub>u<sub>i</sub>. Then we pick an orthonormal basis V for R<sup>n</sup> so that the first k elements span the row space of A and the remaining elements span the null space of A. THEN for each i we define u<sub>i</sub> to be a unit vector parallel to Av<sub>i</sub> and extend this to a basis for R<sup>m</sup>. 
+But! How do we choose the bases V and U? By Av<sub>i</sub>=sigma<sub>i</sub>u<sub>i</sub>. Then we pick an orthonormal basis V for R<sup>n</sup> so that the first k elements span the row space of A and the remaining elements span the null space of A. THEN for each i we define u<sub>i</sub> to be a unit vector parallel to Av<sub>i</sub> and extend this to a basis for R<sup>m</sup>. 
   
 Kalman mentions specifically here that there is no reason to expect the u's to be orthogonal. To me this doesn't make much sense because earlier he said that U was othogonal but I think he may explain that later.
 
@@ -35,11 +35,11 @@ It is common computationally to computoe the SVD for the purpose of finding the 
 
 Something I think is important but hasn't really fit anywhere is this.
 
-The right singular vectors must be the eigenvectors of A<sup>T</sup>
+* The right singular vectors must be the eigenvectors of A<sup>T</sup>
 
-The left singular vectors must be the eigenvectors of AA<sup>T</sup>
+* The left singular vectors must be the eigenvectors of AA<sup>T</sup>
 
-Additionally, the singular values are the square roots of the nonzero eigenvalues which are common to the two matrices. 
+* Additionally, the singular values are the square roots of the nonzero eigenvalues which are common to the two matrices. 
 
 To end this section Kalman mentions a bunch of different ways that SVD can be represented. It's kinda interesting but I don't see how each is useful yet. 
 
@@ -58,9 +58,12 @@ A deeper dive on linear least squares. Kalman puts a whole section aside for thi
 
 ### Linear Least Squares
 
+A genral look at the lls problem is that we have a set of vectors that we want to combine linearly to get as close as possible to a given vector. More definitely, we want to reduce the error of our approximation as much as possible. 
 
+By hand we end up calculating our vector x which is what we use to linearly combine our vectors a by doing a little something like this. x = (A<sup>T</sup>A)<sup>-1</sup>A<sup>T</sup>b. HOWEVER, this performs poorly when actually calculated because computers have to do rounded arithmetic etc. So we can use the SVD to find our LLS instead. More discussion on the poor performance in reference 8, come back to that later.
 
+A condition number is the ratio of the largest singular value of a matrix to the smallest singular value of a matrix. Can also be thought of as the reciprocal of the distance to the nearest singular matrix. A large condition number signals that calculations will be numerically unstable and we should probably use the SVD. When computing A<sup>T</sup>A directly we get a larger condition number because it is the square of the condition number we get when computing it via the SVD. In other words we would have to compute A<sup>T</sup>A with twice as many digits of accuracy.
 
+Kalman runs through a MATLAB example here for the purpose of convincing the reader. I am thoroughly convinced already so I will not be taking notes on it here though I will be reading it. The example is pretty cool
 
-
-
+I don't feel like I need the section on data compression at the moment. May come back to that later but I am more concerned with how the SVD can be used in a data science realm. 
