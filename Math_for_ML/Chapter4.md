@@ -83,19 +83,17 @@ A = U (sigma) V<sup>T</sup>
 
 A is our rectangular matrix m by n, U is an orthogonal matrix m by m with columns 1-m, V is an orthogonal matrix n by n with column vectors 1-n, finally, Sigma is a unique m by n matrix with greater than 0 value for each diagonal entry and zero for each other entry. The diagonals of Sigma are called singular values and are ordered from largest at position (1,1) and proceeding smaller. U entries are the left-singular vectors, v entries are right singular vectors.
 
-A superficial explanation is that our original matrix gets a basis change via V<sup>T</sup>, then a scaling and reduction in dimensionality via Sigma, finally another basis change via U.
+A superficial explanation is that our original matrix gets a basis change via U, then a scaling and reduction in dimensionality via Sigma, finally another basis change via  V<sup>T</sup>.
 
 I'm gonna walk slowly through the explanation of the SVD because I want to understand it very well.
 
 We have a transformation matrix L of a linear mapping from Real<sup>n</sup> to Real<sup>M</sup> with respect to the standard bases B of Real<sup>n</sup> and C of Real<sup>m</sup>. We also assume alternative bases B* and C* of Real<sup>n</sup> and Real<sup>m</sup> respectively.
 
-The process begins here
+Computing the SVD  of a matrix m by n is equivalent to computing the orthonormal bases of the respective codomains. From these bases we make our matrices U and V. Sigma has the same dimensions as our original matrix does.
 
-1. Our matrix V performs a basis change from B* to B so we use V<sup>T</sup> to change from B to B*. 
+I did a ton more notetaking on this subject in a different file. I read a paper specifically on the SVD and it was pretty eyeopening. It's located in the "Papers" directory.
 
-2. After the basis change we use Sigma to scale the new values. This operation also adds or deletes dimensions. Sigma is the transformation matrix with respect to B* and C* 
+### Matrix Approximation
 
-3. U does the basis change from C* back to C.
-
-Computing the SVD  of a matrix m by n is equivalent to computing the orthonormal bases of the respective codomains. From these bases we make our atrices U and V.
+The SVD allows us to represent A as a sum of low-rank matrices which gives us a matrix approximation which is cheaper to compute than the SVD.
 
